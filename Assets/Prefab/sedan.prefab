@@ -87,6 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42aa000e2c92847e8ab9fa3aebbe315f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ObstacleCar
+  speedFactor: 0.9
 --- !u!54 &-1402403704527403868
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -133,5 +134,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.2293701, y: 1.2804657, z: 2.5885582}
+  m_Center: {x: -0.02684164, y: 0.6513892, z: 0.0060515404}
