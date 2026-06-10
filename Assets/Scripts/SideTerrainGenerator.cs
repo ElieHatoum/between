@@ -23,6 +23,8 @@ public class SideTerrainGenerator : MonoBehaviour
     public float noiseRoughness = 0.3f;  
 
     private List<GameObject> activeTerrainTiles = new List<GameObject>();
+    private float zSeedOffset = 0f;
+
 
     void Start()
     {
@@ -31,6 +33,8 @@ public class SideTerrainGenerator : MonoBehaviour
 
     public void RegenerateTerrain()
     {
+        zSeedOffset = Random.Range(0f, 5000f);
+
         ClearOldTerrain();
         GenerateTerrain();
     }
@@ -39,14 +43,12 @@ public class SideTerrainGenerator : MonoBehaviour
     {
         if (grassTilePrefab == null) return;
 
-        // Generate Left Side (Moving outward to the left)
         for (int x = 0; x < columnsWidth; x++)
         {
             float targetX = -edgeDistanceOffset - (x * tileWidthSize);
             SpawnTileAt(targetX);
         }
 
-        // Generate Right Side (Moving outward to the right)
         for (int x = 0; x < columnsWidth; x++)
         {
             float targetX = edgeDistanceOffset + (x * tileWidthSize);
@@ -57,12 +59,12 @@ public class SideTerrainGenerator : MonoBehaviour
     void SpawnTileAt(float xPos)
     {
         float worldX = xPos + transform.position.x;
-        float worldZ = transform.position.z;
+        
+        float worldZ = transform.position.z + zSeedOffset;
         
         float noiseValue = Mathf.PerlinNoise(worldX * noiseRoughness, worldZ * noiseRoughness);
         float randomY = Mathf.Lerp(minElevation, maxElevation, noiseValue);
 
-        // Position relative to this specific moving highway segment
         Vector3 spawnPos = new Vector3(xPos, randomY, 0f);
 
         GameObject tile = Instantiate(grassTilePrefab, transform);

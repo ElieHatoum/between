@@ -61,7 +61,6 @@ public class ObstacleSpawner : MonoBehaviour
     {
         if (carPrefabs.Length == 0) return;
 
-        // --- SAFETY CHECK SYSTEM ---
         // Identify the other two lanes we are NOT currently spawning in
         int otherLaneA = (targetLane + 1) % 3;
         int otherLaneB = (targetLane + 2) % 3;
@@ -70,11 +69,9 @@ public class ObstacleSpawner : MonoBehaviour
         float distA = GetLastCarDistance(otherLaneA);
         float distB = GetLastCarDistance(otherLaneB);
 
-        // CRITICAL RULE: If BOTH other lanes have a car sitting within the safety window, 
-        // spawning a car here would create a solid horizontal wall. We MUST skip/cancel this spawn!
+        // If both other lanes have a car sitting within the safety window, 
         if (distA < safetyPassageWindow && distB < safetyPassageWindow)
         {
-            // Debug.Log($"Spawn blocked in lane {targetLane} to preserve player safety gap!");
             return; 
         }
 
@@ -84,7 +81,6 @@ public class ObstacleSpawner : MonoBehaviour
             return;
         }
 
-        // --- SPAWN EXECUTION ---
         float spawnX = lanePositions[targetLane];
         GameObject randomPrefab = carPrefabs[Random.Range(0, carPrefabs.Length)];
         
@@ -97,11 +93,9 @@ public class ObstacleSpawner : MonoBehaviour
 
     float GetLastCarDistance(int laneIndex)
     {
-        // If there is no car, or it was already destroyed/passed the player, the lane is wide open (Infinite distance)
         if (lastSpawnedCarInLane[laneIndex] == null) 
             return float.MaxValue;
 
-        // Calculate how close the car physically is to the Spawner's baseline (Z axis)
         return Mathf.Abs(transform.position.z - lastSpawnedCarInLane[laneIndex].transform.position.z);
     }
 

@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour
     {
         float horizontalInput = 0f;
 
-        // 1. Check Keyboard Inputs (Supports A/D and Left/Right Arrow keys)
         if (Keyboard.current != null)
         {
             if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) 
@@ -42,19 +41,15 @@ public class PlayerController : MonoBehaviour
                 horizontalInput = 1f;
         }
         
-        // 2. Check Gamepad Analog Stick Inputs (Optional bonus support!)
         if (Gamepad.current != null)
         {
             horizontalInput = Gamepad.current.leftStick.x.ReadValue();
         }
         
-        // 3. Calculate the new intended position
         currentXPosition += horizontalInput * moveSpeed * Time.deltaTime;
         
-        // 4. Clamp the position so the player can't drive off the highway
         currentXPosition = Mathf.Clamp(currentXPosition, -roadWidthLimit, roadWidthLimit);
 
-        // 5. Apply the position cleanly while keeping Y and Z locked
         transform.position = new Vector3(currentXPosition, transform.position.y, 0f);
     }
 
@@ -79,7 +74,6 @@ public class PlayerController : MonoBehaviour
     {
         isInvulnerable = true;
         
-        // Bonus: Clean up any existing obstacle cars on screen when hit (as per requirements)
         ClearActiveObstacles();
 
         // Flash the car material to show invulnerability
@@ -98,7 +92,6 @@ public class PlayerController : MonoBehaviour
 
     private void ClearActiveObstacles()
     {
-        // We will target a script we'll make in Step 5, but for now we look for objects tagged "Obstacle"
         GameObject[] obstacles = GameObject.FindGameObjectsWithTag("Obstacle");
         foreach (GameObject obstacle in obstacles)
         {

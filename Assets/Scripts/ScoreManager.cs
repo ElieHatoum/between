@@ -3,12 +3,12 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public Text scoreText; // Assign a UI Text element here
+    public Text scoreText;
     private float score = 0f;
 
     void Update()
     {
-        if (Time.timeScale > 0) // Only count if game is running
+        if (Time.timeScale > 0)
         {
             score += EnvironmentScroller.gameSpeed * Time.deltaTime;
             scoreText.text = "Score: " + Mathf.FloorToInt(score).ToString();
