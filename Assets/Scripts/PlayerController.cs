@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log("GAME OVER!");
         if (scoreManager != null) scoreManager.StopScoreTracking();
         Time.timeScale = 0f;
-        GameOverScript.Setup(100); // Pass the player's score here instead of 100
+        GameOverScript.Setup(scoreManager.GetFinalScore()); // Pass the player's score here instead of 100
 
     }
 }

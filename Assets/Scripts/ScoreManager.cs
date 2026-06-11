@@ -36,4 +36,9 @@ public class ScoreManager : MonoBehaviour
     {
         isPlayerDead = true;
     }
+
+    public int GetFinalScore()
+    {
+        return Mathf.FloorToInt(currentScore);
+    }
 }
