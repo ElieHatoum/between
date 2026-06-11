@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     private bool isInvulnerable = false;
     private Renderer[] carRenderers; // Used for the flashing effect
 
+    public GameOverScript GameOverScript;
+
     void Start()
     {
         currentXPosition = transform.position.x;
@@ -111,5 +113,7 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("GAME OVER!");
         Time.timeScale = 0f;
+        GameOverScript.Setup(100); // Pass the player's score here instead of 100
+
     }
 }

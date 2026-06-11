@@ -1,0 +1,1006 @@
+fileFormatVersion: 2
+guid: f20a7090eb3c14c96bd2f806769752fe
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 283
+        width: 112
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9e1dc8b900f54b02824d61af7ea32c3
+      internalID: -166978477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 283
+        width: 99
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9a47a22736d9472d92698b1409eae43
+      internalID: -863504405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 344
+        width: 50
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe8651ff053d04ee68379ef79762cdec
+      internalID: -1248426524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 343
+        width: 87
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c221906e4684b4fed877ceefdc19ef9e
+      internalID: -2035918532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 283
+        width: 97
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b484d54e2523a4bca99bf9e31df71b53
+      internalID: -389519530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 283
+        width: 98
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02ca932b1a0ad4651916e119f005a6bf
+      internalID: -1466013085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 284
+        width: 100
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87a3d8149cdb241689045e34608faead
+      internalID: 2104247111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 283
+        width: 100
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad65cf91bfbf847f6ace12a35ae09375
+      internalID: 151564914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 232
+        width: 98
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a13e1a0d199d47fab12b6be1afbe62e
+      internalID: 1792876642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 226
+        width: 98
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c5a0816beba94ed1bf7fc4567146d52
+      internalID: -348667222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 232
+        width: 100
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66e3f1d694adf4663adba7815e10ffc6
+      internalID: -2125996835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 232
+        width: 98
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9482ef03a57f74f67accadc115f00172
+      internalID: -851628571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 232
+        width: 97
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20bbd4ba14c504e8d961edd296c5046d
+      internalID: 1474205427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 232
+        width: 113
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 173079004a7c9418db31fadc79ac28ee
+      internalID: -2140811505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 180
+        width: 97
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7051c5b3026544802a6bba6f7c565232
+      internalID: 1112444606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 179
+        width: 98
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49d9dafbb91b44f88bf9eb86bd7dacd5
+      internalID: -750701836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 176
+        width: 99
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cd6cae5acdc1427b850340f1057aba2
+      internalID: 1598540732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 180
+        width: 97
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daa5919dd5b334a75a640f38bf0709ce
+      internalID: 556791638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 179
+        width: 97
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c50fad7cd835454fb9cb0590802a858
+      internalID: -2082382261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_19
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 180
+        width: 106
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03b684b92634b4efc8e3fe3ea58f6763
+      internalID: -1174860428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_20
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 127
+        width: 99
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 824291388b09e49cab1ee4c43c570c30
+      internalID: 345486337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_21
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 127
+        width: 98
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f502b06d79dc141f2926972916e67acb
+      internalID: -1247525041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_22
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 127
+        width: 99
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fca57e13a128b403fadba4e2941f7340
+      internalID: -372442325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_23
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 128
+        width: 101
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaf581e7fe24f4fdc8c42c9d0834c59e
+      internalID: 1389046177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_24
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 126
+        width: 98
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a2a5804073644d37a41a7eaabb4e41b
+      internalID: -530140356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_25
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 122
+        width: 97
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfa787c0f110943ea87996fff965cbf7
+      internalID: 1099526790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_26
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 72
+        width: 100
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e974d2b23ca8f4aa28c83945882d6cfe
+      internalID: 258151727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_27
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 75
+        width: 100
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ef6abdf5f1c4a31acab1980b6d58c5
+      internalID: -151620190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_28
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 68
+        width: 100
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb29fa1897c014fa882a20005af80518
+      internalID: 1454115687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_29
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 75
+        width: 99
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 161524ac2f43f4cffa5d099fa44c96ec
+      internalID: -1575135930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_30
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 75
+        width: 98
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32244ab936f394e538b218c640199d31
+      internalID: 1863815919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_31
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 75
+        width: 98
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3230833f7d9e44a9abaa4e843669fddf
+      internalID: 521562497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_32
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1
+        width: 98
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f65ce52069f4485abd6ef3b83acb720
+      internalID: -1802674273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_33
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 23
+        width: 99
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d96c00cf290640fd99ff5edf11a7ce0
+      internalID: 2032843361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_34
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 16
+        width: 100
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c61e75891dc994dc5a32711181d63037
+      internalID: -1456327196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_35
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 24
+        width: 98
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5e7578f9a7fa42b1ab5a726d617d1ea
+      internalID: 980313626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_36
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 24
+        width: 98
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0169ebb407504c34bb89b59730723a3
+      internalID: -185906031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2D_Basic_Buttons-removebg-preview_37
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 22
+        width: 104
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c2685dc234984bcd99d64504a03dc71
+      internalID: 82172966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 85a6618d310be448f9400dea41ae8ba6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      2D_Basic_Buttons-removebg-preview_0: -166978477
+      2D_Basic_Buttons-removebg-preview_1: -863504405
+      2D_Basic_Buttons-removebg-preview_10: -2125996835
+      2D_Basic_Buttons-removebg-preview_11: -851628571
+      2D_Basic_Buttons-removebg-preview_12: 1474205427
+      2D_Basic_Buttons-removebg-preview_13: -2140811505
+      2D_Basic_Buttons-removebg-preview_14: 1112444606
+      2D_Basic_Buttons-removebg-preview_15: -750701836
+      2D_Basic_Buttons-removebg-preview_16: 1598540732
+      2D_Basic_Buttons-removebg-preview_17: 556791638
+      2D_Basic_Buttons-removebg-preview_18: -2082382261
+      2D_Basic_Buttons-removebg-preview_19: -1174860428
+      2D_Basic_Buttons-removebg-preview_2: -1248426524
+      2D_Basic_Buttons-removebg-preview_20: 345486337
+      2D_Basic_Buttons-removebg-preview_21: -1247525041
+      2D_Basic_Buttons-removebg-preview_22: -372442325
+      2D_Basic_Buttons-removebg-preview_23: 1389046177
+      2D_Basic_Buttons-removebg-preview_24: -530140356
+      2D_Basic_Buttons-removebg-preview_25: 1099526790
+      2D_Basic_Buttons-removebg-preview_26: 258151727
+      2D_Basic_Buttons-removebg-preview_27: -151620190
+      2D_Basic_Buttons-removebg-preview_28: 1454115687
+      2D_Basic_Buttons-removebg-preview_29: -1575135930
+      2D_Basic_Buttons-removebg-preview_3: -2035918532
+      2D_Basic_Buttons-removebg-preview_30: 1863815919
+      2D_Basic_Buttons-removebg-preview_31: 521562497
+      2D_Basic_Buttons-removebg-preview_32: -1802674273
+      2D_Basic_Buttons-removebg-preview_33: 2032843361
+      2D_Basic_Buttons-removebg-preview_34: -1456327196
+      2D_Basic_Buttons-removebg-preview_35: 980313626
+      2D_Basic_Buttons-removebg-preview_36: -185906031
+      2D_Basic_Buttons-removebg-preview_37: 82172966
+      2D_Basic_Buttons-removebg-preview_4: -389519530
+      2D_Basic_Buttons-removebg-preview_5: -1466013085
+      2D_Basic_Buttons-removebg-preview_6: 2104247111
+      2D_Basic_Buttons-removebg-preview_7: 151564914
+      2D_Basic_Buttons-removebg-preview_8: 1792876642
+      2D_Basic_Buttons-removebg-preview_9: -348667222
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
