@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     private bool isInvulnerable = false;
     private Renderer[] carRenderers; // Used for the flashing effect
 
+    private ScoreManager scoreManager;
+
     public GameOverScript GameOverScript;
 
     void Start()
@@ -24,6 +26,8 @@ public class PlayerController : MonoBehaviour
         currentXPosition = transform.position.x;
         // Grab all renderers on the car (including child objects) for visual feedback
         carRenderers = GetComponentsInChildren<Renderer>();
+
+        scoreManager = FindAnyObjectByType<ScoreManager>();
     }
 
     void Update()
@@ -112,6 +116,7 @@ public class PlayerController : MonoBehaviour
     void GameOver()
     {
         Debug.Log("GAME OVER!");
+        if (scoreManager != null) scoreManager.StopScoreTracking();
         Time.timeScale = 0f;
         GameOverScript.Setup(100); // Pass the player's score here instead of 100
 
