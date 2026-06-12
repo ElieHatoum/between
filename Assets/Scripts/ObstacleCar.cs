@@ -39,8 +39,18 @@ public class ObstacleCar : MonoBehaviour
 
                 if (directionToPlayer.z < -0.4f)
                 {
-                    Debug.Log("CRASHED FROM BEHIND! Instant Game Over.");
-                    player.TakeDamage(3); // Deducts all 3 lives immediately
+                    // Check if player has a shield active
+                    if (player.isShieldActive) 
+                    {
+                        player.isShieldActive = false; // Break the shield armor
+                        Debug.Log("Shield absorbed the deadly crash from behind!");
+                        Destroy(gameObject); // Vaporize this car safely
+                    }
+                    else 
+                    {
+                        Debug.Log("CRASHED FROM BEHIND! Instant Game Over.");
+                        player.TakeDamage(3);
+                    }
                 }
                 else
                 {

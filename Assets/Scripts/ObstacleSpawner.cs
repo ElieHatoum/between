@@ -4,6 +4,13 @@ public class ObstacleSpawner : MonoBehaviour
 {
     [Header("Obstacle Assets")]
     public GameObject[] carPrefabs;
+
+    [Header("Power Up Settings")]
+    public GameObject[] powerUpPrefabs; // Assign your 5 power-up prefabs here
+    [Range(0f, 1f)]
+    public float powerUpSpawnChance = 0.15f; // 15% chance a spawn wave drops a power-up instead of a car
+    public float powerUpHeightOffset = 1f;
+
     public float[] lanePositions = new float[] { -2.5f, 0f, 2.5f }; // Left, Center, Right
 
     [Header("Dynamic Traffic Settings")]
@@ -16,6 +23,7 @@ public class ObstacleSpawner : MonoBehaviour
 
     // Track the last spawned car in each individual lane
     private GameObject[] lastSpawnedCarInLane = new GameObject[3];
+    private GameObject activePowerUp;
     // Track independent timers for each lane
     private float[] laneTimers = new float[3];
     private float[] laneNextSpawnTimes = new float[3];
@@ -82,10 +90,27 @@ public class ObstacleSpawner : MonoBehaviour
         }
 
         float spawnX = lanePositions[targetLane];
-        GameObject randomPrefab = carPrefabs[Random.Range(0, carPrefabs.Length)];
-        
-        Vector3 spawnPosition = new Vector3(spawnX, transform.position.y, transform.position.z);
-        GameObject newObstacle = Instantiate(randomPrefab, spawnPosition, Quaternion.identity);
+        GameObject selectedPrefab;
+
+        float targetHeight = transform.position.y;
+
+        if (Random.value < powerUpSpawnChance && powerUpPrefabs.Length > 0)
+        {
+            selectedPrefab = powerUpPrefabs[Random.Range(0, powerUpPrefabs.Length)];
+            // Apply the floating height lift for power ups!
+            targetHeight += powerUpHeightOffset; 
+        }
+        else
+        {
+            selectedPrefab = carPrefabs[Random.Range(0, carPrefabs.Length)];
+        }
+
+        // Spawn perfectly balanced!
+        Vector3 spawnPosition = new Vector3(spawnX, targetHeight, transform.position.z);
+        GameObject newObstacle = Instantiate(selectedPrefab, spawnPosition, Quaternion.identity);
+
+        if (newObstacle.GetComponent<PowerUpItem>() != null)
+            activePowerUp = newObstacle;
 
         // Store a reference to this car so this lane can track its position on future frames
         lastSpawnedCarInLane[targetLane] = newObstacle;

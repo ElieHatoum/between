@@ -10,8 +10,12 @@ public class PlayerController : MonoBehaviour
     public float roadWidthLimit = 4.5f; 
 
     [Header("Player Stats")]
-    public int lives = 3;
+    public int lives = 4;
     public float invulnerabilityDuration = 2f;
+
+    [Header("Power Up Active States")]
+    public bool isShieldActive = false;
+    private float scoreMultiplier = 1f;
 
     [Header("UI Settings")]
     public Image[] heartImages;  // Tes 3 objets Images dans le Canvas
@@ -106,5 +110,92 @@ public class PlayerController : MonoBehaviour
         Debug.Log("GAME OVER!");
         if (scoreManager != null) scoreManager.StopScoreTracking();
         Time.timeScale = 0f;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        // Check if the item we drove through is tagged as a PowerUp
+        if (other.CompareTag("PowerUp"))
+        {
+            PowerUpItem powerUp = other.GetComponent<PowerUpItem>();
+            
+            if (powerUp != null)
+            {
+                // The magic switch statement: filters out behavior based on the object's Enum Type
+                switch (powerUp.type)
+                {
+                    case PowerUpItem.PowerUpType.Heart:
+                        ApplyHeart();
+                        break;
+                    case PowerUpItem.PowerUpType.Star:
+                        StartCoroutine(ApplyStar());
+                        break;
+                    case PowerUpItem.PowerUpType.SpeedUp:
+                        StartCoroutine(ApplySpeedUpMultiplier());
+                        break;
+                    case PowerUpItem.PowerUpType.Bomb:
+                        StartCoroutine(ApplyBombInvincibility());
+                        break;
+                    case PowerUpItem.PowerUpType.Shield:
+                        ApplyShield();
+                        break;
+                }
+            }
+
+            // Destroy the power-up model from the highway so it looks eaten!
+            Destroy(other.gameObject);
+        }
+    }
+
+    // --- POWER UP EFFECTS LOGIC ---
+
+    void ApplyHeart()
+    {
+        lives = Mathf.Min(4, lives + 1); // Adds 1 life, maxing out at 3
+        Debug.Log($"+1 Life! Total lives: {lives}");
+    }
+
+    IEnumerator ApplyStar()
+    {
+        Debug.Log("STAR POWER! Hyper Speed + Invincibility active.");
+        float originalAcceleration = EnvironmentScroller.gameSpeed; 
+        
+        EnvironmentScroller.gameSpeed += 15f; // Boost the scrolling highway speed up dramatically
+        isInvulnerable = true; 
+
+        yield return new WaitForSeconds(5f);
+
+        EnvironmentScroller.gameSpeed = originalAcceleration; // Return to normal speed
+        isInvulnerable = false;
+        Debug.Log("Star Power ended.");
+    }
+
+    IEnumerator ApplySpeedUpMultiplier()
+    {
+        Debug.Log("SCORE MULTIPLIER ACTIVE!");
+        // We will hook this into your ScoreManager via a quick multiplier modification
+        ScoreManager scoreManager = FindAnyObjectByType<ScoreManager>();
+        if (scoreManager != null) scoreManager.scoreMultiplier = 4f; // Double the score accumulation rate
+
+        yield return new WaitForSeconds(6f); // Lasts for a brief period
+
+        if (scoreManager != null) scoreManager.scoreMultiplier = 2f; // Return to baseline
+    }
+
+    IEnumerator ApplyBombInvincibility()
+    {
+        Debug.Log("BOMB! Invincibility for 3 seconds.");
+        isInvulnerable = true;
+        ClearActiveObstacles(); // Blow up everything currently visible on screen!
+
+        yield return new WaitForSeconds(3f);
+        isInvulnerable = false;
+    }
+
+    void ApplyShield()
+    {
+        Debug.Log("SHIELD CHARGED! Backwards collision armor active.");
+        isShieldActive = true;
+        // Optional: toggle a blue energy ring visual child object on your car here!
     }
 }
