@@ -5,7 +5,7 @@ public class EnvironmentScroller : MonoBehaviour
 {
     [Header("Speed Settings")]
     public static float gameSpeed = 15f;    
-    public float maxSpeed = 40f;           
+    public float maxSpeed = 30f;           
     public static float acceleration = 0.1f;
 
     [Header("Looping Settings")]
@@ -28,6 +28,8 @@ public class EnvironmentScroller : MonoBehaviour
         if (gameSpeed < maxSpeed)
         {
             gameSpeed += acceleration * Time.deltaTime;
+            Debug.Log($"Star applied! gameSpeed now={EnvironmentScroller.gameSpeed}");
+
         }
         print("Current Game Speed: " + gameSpeed);
 

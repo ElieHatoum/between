@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
 
     public GameOverScript GameOverScript;
 
+    public AudioSource audioSource;
+
     void Start()
     {
         currentXPosition = transform.position.x;
@@ -44,6 +46,7 @@ public class PlayerController : MonoBehaviour
         scoreManager = FindAnyObjectByType<ScoreManager>();
         hudController = FindAnyObjectByType<PowerUpHUDController>();
         UpdateHeartUI();
+        //  audioSource.pitch
     }
 
     void Update()
@@ -191,12 +194,13 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator ApplyStar()
     {
-        Debug.Log("STAR POWER!");
+        Debug.Log($"STAR applied! speedBefore={EnvironmentScroller.gameSpeed}, starWasActive={starWasActive}");
         if (hudController != null) hudController.DisplayTimedPowerUp("STAR", 5f);
         speedBeforeStar = EnvironmentScroller.gameSpeed;
         starWasActive = true;
         EnvironmentScroller.gameSpeed += 15f;
         isInvulnerable = true;
+        Debug.Log($"STAR active! gameSpeed now={EnvironmentScroller.gameSpeed}, isInvulnerable={isInvulnerable}");
 
         yield return new WaitForSeconds(5f);
 
