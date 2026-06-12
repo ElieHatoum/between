@@ -506,7 +506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentScroller
   maxSpeed: 40
-  acceleration: 0.2
+  acceleration: 0.1
   tileLength: 3
   totalSegments: 11
 --- !u!4 &92001567
@@ -1272,12 +1272,20 @@ MonoBehaviour:
   - {fileID: 9156960831048976394, guid: 559eedde5a157cd1c9481bd8c846638a, type: 3}
   - {fileID: 9000784205922225113, guid: 43ab7f656907c59ed80f4a6d4fb8527b, type: 3}
   - {fileID: 7378675869916984710, guid: 46afe32b7294bfc6dbe091e2cd900f93, type: 3}
+  powerUpPrefabs:
+  - {fileID: 3178034187097425471, guid: 0736a1879a1a760f18eaaf91d59f90bf, type: 3}
+  - {fileID: 6026794897336723189, guid: dec8bfdacf7a924179228b052f3e79e1, type: 3}
+  - {fileID: 4074057606834064373, guid: ba2732dbe5f5da52b90a0e5d8dcf11bc, type: 3}
+  - {fileID: 7556009422449582750, guid: f49c04477cc4cfb9e8eb19d093bb69ab, type: 3}
+  - {fileID: 5463598833856064932, guid: 2598646899da498589d05eb0206b9065, type: 3}
+  powerUpSpawnChance: 0.05
+  powerUpHeightOffset: 1
   lanePositions:
   - -2.5
   - 0
   - 2.5
-  minTimeBetweenCars: 1.2
-  maxTimeBetweenCars: 4
+  minTimeBetweenCars: 0.1
+  maxTimeBetweenCars: 1
   safetyPassageWindow: 15
 --- !u!4 &219423970
 Transform:
@@ -1330,7 +1338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentScroller
   maxSpeed: 40
-  acceleration: 0.2
+  acceleration: 0.1
   tileLength: 3
   totalSegments: 11
 --- !u!4 &274715738
@@ -1545,7 +1553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentScroller
   maxSpeed: 40
-  acceleration: 0.2
+  acceleration: 0.1
   tileLength: 3
   totalSegments: 11
 --- !u!4 &288146595
@@ -1963,7 +1971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentScroller
   maxSpeed: 40
-  acceleration: 0.2
+  acceleration: 0.1
   tileLength: 3
   totalSegments: 11
 --- !u!4 &366978418
@@ -2159,6 +2167,7 @@ MonoBehaviour:
   roadWidthLimit: 3.2
   lives: 3
   invulnerabilityDuration: 2
+  isShieldActive: 0
   heartImages:
   - {fileID: 108733935}
   - {fileID: 752841555}
@@ -2607,7 +2616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentScroller
   maxSpeed: 40
-  acceleration: 0.2
+  acceleration: 0.1
   tileLength: 3
   totalSegments: 11
 --- !u!4 &505266662
@@ -2976,7 +2985,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentScroller
   maxSpeed: 40
-  acceleration: 0.2
+  acceleration: 0.1
   tileLength: 3
   totalSegments: 11
 --- !u!4 &618759246
@@ -3806,7 +3815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentScroller
   maxSpeed: 40
-  acceleration: 0.2
+  acceleration: 0.1
   tileLength: 3
   totalSegments: 11
 --- !u!4 &841808550
@@ -4236,7 +4245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentScroller
   maxSpeed: 40
-  acceleration: 0.2
+  acceleration: 0.1
   tileLength: 3
   totalSegments: 11
 --- !u!4 &922153108
@@ -5050,7 +5059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentScroller
   maxSpeed: 40
-  acceleration: 0.2
+  acceleration: 0.1
   tileLength: 3
   totalSegments: 11
 --- !u!4 &1165225866
@@ -5233,7 +5242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentScroller
   maxSpeed: 40
-  acceleration: 0.2
+  acceleration: 0.1
   tileLength: 3
   totalSegments: 11
 --- !u!114 &1251720677
@@ -6006,7 +6015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentScroller
   maxSpeed: 40
-  acceleration: 0.2
+  acceleration: 0.1
   tileLength: 3
   totalSegments: 11
 --- !u!4 &1521496233
@@ -6152,7 +6161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentScroller
   maxSpeed: 40
-  acceleration: 0.2
+  acceleration: 0.1
   tileLength: 3
   totalSegments: 11
 --- !u!4 &1586186931
