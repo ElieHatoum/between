@@ -12,4 +12,5 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
         Application.Quit();
     }
+
 }

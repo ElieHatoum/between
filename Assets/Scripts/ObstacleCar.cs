@@ -5,6 +5,15 @@ public class ObstacleCar : MonoBehaviour
     [Header("Movement Settings")]
     [Range(0.1f, 0.9f)]
     public float speedFactor = 1f; 
+    private EnvironmentScroller environmentScroller;
+
+    private ScoreManager scoreManager;
+
+    void Awake()
+    {
+        environmentScroller = FindAnyObjectByType<EnvironmentScroller>();
+        scoreManager = FindAnyObjectByType<ScoreManager>();
+    }
 
     void Update()
     {
@@ -30,7 +39,13 @@ public class ObstacleCar : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerController player = collision.gameObject.GetComponent<PlayerController>();
-            
+
+            //reduce player's speed by 20% for 2 seconds
+            if (player != null)
+            {
+                environmentScroller.ReduceSpeed(0.2f, 2f);
+            }
+
             if (player != null)
             {
                 // Calculate the direction from the Obstacle to the Player
@@ -41,10 +56,18 @@ public class ObstacleCar : MonoBehaviour
                 {
                     Debug.Log("CRASHED FROM BEHIND! Instant Game Over.");
                     player.TakeDamage(3); // Deducts all 3 lives immediately
+                    // highscore save
+                    int finalScore = scoreManager.GetFinalScore();
+                    int lastHightScore = PlayerPrefs.GetInt("HighScore", 0);
+                    if (finalScore > lastHightScore)
+                    {
+                        PlayerPrefs.SetInt("HighScore", finalScore);
+                    }
                 }
                 else
                 {
                     Debug.Log("SIDE SWIPE! Took 1 damage.");
+                    print("hit from the side");
                     player.TakeDamage(1);
                     Destroy(gameObject);
                 }

@@ -1,11 +1,12 @@
 using UnityEngine;
+using System.Collections;
 
 public class EnvironmentScroller : MonoBehaviour
 {
     [Header("Speed Settings")]
     public static float gameSpeed = 15f;    
     public float maxSpeed = 40f;           
-    public float acceleration = 0.2f;       
+    public static float acceleration = 0.1f;
 
     [Header("Looping Settings")]
     public float tileLength = 3f;
@@ -16,7 +17,8 @@ public class EnvironmentScroller : MonoBehaviour
 
     void Start()
     {
-        // When a single tile goes past Z = -3, it resets
+        gameSpeed = 15f;
+        acceleration = 0.1f;
         resetThreshold = -tileLength;
     }
 
@@ -27,6 +29,7 @@ public class EnvironmentScroller : MonoBehaviour
         {
             gameSpeed += acceleration * Time.deltaTime;
         }
+        print("Current Game Speed: " + gameSpeed);
 
         // Move the highway tile backward
         transform.Translate(Vector3.back * gameSpeed * Time.deltaTime);
@@ -47,5 +50,27 @@ public class EnvironmentScroller : MonoBehaviour
                 terrainGen.RegenerateTerrain();
             }
         }
+    }
+
+    public void ReduceSpeed(float percentage, float duration)
+    {
+        StartCoroutine(SpeedReductionCoroutine(percentage, duration));
+    }
+
+    private IEnumerator SpeedReductionCoroutine(float percentage, float duration)
+    {
+        float reducedSpeed = gameSpeed * (1f - percentage);
+        float targetSpeed = gameSpeed;
+        gameSpeed = reducedSpeed;
+
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            gameSpeed = Mathf.Lerp(reducedSpeed, targetSpeed, elapsed / duration);
+            yield return null;
+        }
+
+        gameSpeed = targetSpeed;
     }
 }
