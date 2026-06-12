@@ -10,8 +10,12 @@ public class PlayerController : MonoBehaviour
     public float roadWidthLimit = 4.5f; 
 
     [Header("Player Stats")]
-    public int lives = 3;
+    public int lives = 4;
     public float invulnerabilityDuration = 2f;
+
+    [Header("Power Up Active States")]
+    public bool isShieldActive = false;
+    private float scoreMultiplier = 1f;
 
     [Header("UI Settings")]
     public Image[] heartImages;  // Tes 3 objets Images dans le Canvas
@@ -19,10 +23,12 @@ public class PlayerController : MonoBehaviour
     public Sprite emptyHeart;    // Glisse l'image du cœur gris ici
 
     private float currentXPosition = 0f;
-    private bool isInvulnerable = false;
+    public bool isInvulnerable = false;
     private Renderer[] carRenderers;
 
     private ScoreManager scoreManager;
+
+    public PowerUpHUDController hudController;
 
     public GameOverScript GameOverScript;
 
@@ -32,6 +38,7 @@ public class PlayerController : MonoBehaviour
         carRenderers = GetComponentsInChildren<Renderer>();
 
         scoreManager = FindAnyObjectByType<ScoreManager>();
+        hudController = FindAnyObjectByType<PowerUpHUDController>();
         UpdateHeartUI();
     }
 
@@ -110,5 +117,94 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 0f;
         GameOverScript.Setup(scoreManager.GetFinalScore()); // Pass the player's score here instead of 100
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        // Check if the item we drove through is tagged as a PowerUp
+        if (other.CompareTag("PowerUp"))
+        {
+            PowerUpItem powerUp = other.GetComponent<PowerUpItem>();
+            
+            if (powerUp != null)
+            {
+                // The magic switch statement: filters out behavior based on the object's Enum Type
+                switch (powerUp.type)
+                {
+                    case PowerUpItem.PowerUpType.Heart:
+                        ApplyHeart();
+                        break;
+                    case PowerUpItem.PowerUpType.Star:
+                        StartCoroutine(ApplyStar());
+                        break;
+                    case PowerUpItem.PowerUpType.SpeedUp:
+                        StartCoroutine(ApplySpeedUpMultiplier());
+                        break;
+                    case PowerUpItem.PowerUpType.Bomb:
+                        StartCoroutine(ApplyBombInvincibility());
+                        break;
+                    case PowerUpItem.PowerUpType.Shield:
+                        ApplyShield();
+                        break;
+                }
+            }
+
+            // Destroy the power-up model from the highway so it looks eaten!
+            Destroy(other.gameObject);
+        }
+    }
+
+    // --- POWER UP EFFECTS LOGIC ---
+
+    void ApplyHeart()
+    {
+        lives = Mathf.Min(4, lives + 1);
+        UpdateHeartUI();
+        Debug.Log($"+1 Life! Total lives: {lives}");
+    }
+
+    IEnumerator ApplyStar()
+    {
+        Debug.Log("STAR POWER!");
+        if (hudController != null) hudController.DisplayTimedPowerUp("STAR", 5f); // <-- ADD THIS
+
+        float originalSpeed = EnvironmentScroller.gameSpeed; 
+        EnvironmentScroller.gameSpeed += 15f; 
+        isInvulnerable = true; 
+
+        yield return new WaitForSeconds(5f);
+
+        EnvironmentScroller.gameSpeed = originalSpeed; 
+        isInvulnerable = false;
+    }
+
+    IEnumerator ApplySpeedUpMultiplier()
+    {
+        Debug.Log("SCORE MULTIPLIER ACTIVE!");
+        if (hudController != null) hudController.DisplayTimedPowerUp("2x SCORE", 6f); // <-- ADD THIS
+
+        ScoreManager scoreManager = FindAnyObjectByType<ScoreManager>();
+        if (scoreManager != null) scoreManager.scoreMultiplier = 4f; 
+
+        yield return new WaitForSeconds(6f); 
+
+        if (scoreManager != null) scoreManager.scoreMultiplier = 2f; 
+    }
+
+    IEnumerator ApplyBombInvincibility()
+    {
+        Debug.Log("BOMB! Invincibility for 3 seconds.");
+        isInvulnerable = false;
+        ClearActiveObstacles(); // Blow up everything currently visible on screen!
+
+        yield return new WaitForSeconds(3f);
+        isInvulnerable = false;
+    }
+
+    void ApplyShield()
+    {
+        Debug.Log("SHIELD CHARGED!");
+        isShieldActive = true;
+        if (hudController != null) hudController.DisplayShieldHUD(); // <-- ADD THIS
     }
 }
