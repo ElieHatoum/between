@@ -26,25 +26,33 @@ public class ObstacleCar : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // Check if the thing we ran into is the Player
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerController player = collision.gameObject.GetComponent<PlayerController>();
             
             if (player != null)
             {
+                if (player.isInvulnerable && EnvironmentScroller.gameSpeed > 25f) 
+                {
+                    Debug.Log("Star Power smashed through an obstacle!");
+                    Destroy(gameObject); 
+                    return; // Stop right here, don't execute any code below!
+                }
+
                 // Calculate the direction from the Obstacle to the Player
-                Vector3 contactPoint = collision.GetContact(0).point;
                 Vector3 directionToPlayer = (collision.transform.position - transform.position).normalized;
 
+                // Handle normal Rear-End crash
                 if (directionToPlayer.z < -0.4f)
                 {
-                    // Check if player has a shield active
                     if (player.isShieldActive) 
                     {
-                        player.isShieldActive = false; // Break the shield armor
-                        Debug.Log("Shield absorbed the deadly crash from behind!");
-                        Destroy(gameObject); // Vaporize this car safely
+                        player.isShieldActive = false;
+                        // Find the HUD controller and turn off ONLY the shield text
+                        PowerUpHUDController hud = FindAnyObjectByType<PowerUpHUDController>();
+                        if (hud != null) hud.HideHUD();
+                        
+                        Destroy(gameObject);
                     }
                     else 
                     {
@@ -52,11 +60,12 @@ public class ObstacleCar : MonoBehaviour
                         player.TakeDamage(3);
                     }
                 }
+                // Handle normal Side-Swipe
                 else
                 {
                     Debug.Log("SIDE SWIPE! Took 1 damage.");
-                    player.TakeDamage(1);
-                    Destroy(gameObject);
+                    player.TakeDamage(1); 
+                    Destroy(gameObject);  
                 }
             }
         }

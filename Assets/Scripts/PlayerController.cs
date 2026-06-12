@@ -23,10 +23,12 @@ public class PlayerController : MonoBehaviour
     public Sprite emptyHeart;    // Glisse l'image du cœur gris ici
 
     private float currentXPosition = 0f;
-    private bool isInvulnerable = false;
+    public bool isInvulnerable = false;
     private Renderer[] carRenderers;
 
     private ScoreManager scoreManager;
+
+    public PowerUpHUDController hudController;
 
     void Start()
     {
@@ -34,6 +36,7 @@ public class PlayerController : MonoBehaviour
         carRenderers = GetComponentsInChildren<Renderer>();
 
         scoreManager = FindAnyObjectByType<ScoreManager>();
+        hudController = FindAnyObjectByType<PowerUpHUDController>();
         UpdateHeartUI();
     }
 
@@ -151,41 +154,43 @@ public class PlayerController : MonoBehaviour
 
     void ApplyHeart()
     {
-        lives = Mathf.Min(4, lives + 1); // Adds 1 life, maxing out at 3
+        lives = Mathf.Min(4, lives + 1);
+        UpdateHeartUI();
         Debug.Log($"+1 Life! Total lives: {lives}");
     }
 
     IEnumerator ApplyStar()
     {
-        Debug.Log("STAR POWER! Hyper Speed + Invincibility active.");
-        float originalAcceleration = EnvironmentScroller.gameSpeed; 
-        
-        EnvironmentScroller.gameSpeed += 15f; // Boost the scrolling highway speed up dramatically
+        Debug.Log("STAR POWER!");
+        if (hudController != null) hudController.DisplayTimedPowerUp("STAR", 5f); // <-- ADD THIS
+
+        float originalSpeed = EnvironmentScroller.gameSpeed; 
+        EnvironmentScroller.gameSpeed += 15f; 
         isInvulnerable = true; 
 
         yield return new WaitForSeconds(5f);
 
-        EnvironmentScroller.gameSpeed = originalAcceleration; // Return to normal speed
+        EnvironmentScroller.gameSpeed = originalSpeed; 
         isInvulnerable = false;
-        Debug.Log("Star Power ended.");
     }
 
     IEnumerator ApplySpeedUpMultiplier()
     {
         Debug.Log("SCORE MULTIPLIER ACTIVE!");
-        // We will hook this into your ScoreManager via a quick multiplier modification
+        if (hudController != null) hudController.DisplayTimedPowerUp("2x SCORE", 6f); // <-- ADD THIS
+
         ScoreManager scoreManager = FindAnyObjectByType<ScoreManager>();
-        if (scoreManager != null) scoreManager.scoreMultiplier = 4f; // Double the score accumulation rate
+        if (scoreManager != null) scoreManager.scoreMultiplier = 4f; 
 
-        yield return new WaitForSeconds(6f); // Lasts for a brief period
+        yield return new WaitForSeconds(6f); 
 
-        if (scoreManager != null) scoreManager.scoreMultiplier = 2f; // Return to baseline
+        if (scoreManager != null) scoreManager.scoreMultiplier = 2f; 
     }
 
     IEnumerator ApplyBombInvincibility()
     {
         Debug.Log("BOMB! Invincibility for 3 seconds.");
-        isInvulnerable = true;
+        isInvulnerable = false;
         ClearActiveObstacles(); // Blow up everything currently visible on screen!
 
         yield return new WaitForSeconds(3f);
@@ -194,8 +199,8 @@ public class PlayerController : MonoBehaviour
 
     void ApplyShield()
     {
-        Debug.Log("SHIELD CHARGED! Backwards collision armor active.");
+        Debug.Log("SHIELD CHARGED!");
         isShieldActive = true;
-        // Optional: toggle a blue energy ring visual child object on your car here!
+        if (hudController != null) hudController.DisplayShieldHUD(); // <-- ADD THIS
     }
 }
