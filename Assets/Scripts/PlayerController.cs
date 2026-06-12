@@ -30,6 +30,10 @@ public class PlayerController : MonoBehaviour
 
     public PowerUpHUDController hudController;
 
+    private Coroutine activePowerUpCoroutine;
+    private bool starWasActive = false;
+    private float speedBeforeStar;
+
     public GameOverScript GameOverScript;
 
     void Start()
@@ -135,15 +139,19 @@ public class PlayerController : MonoBehaviour
                         ApplyHeart();
                         break;
                     case PowerUpItem.PowerUpType.Star:
-                        StartCoroutine(ApplyStar());
+                        CancelCurrentPowerUp();
+                        activePowerUpCoroutine = StartCoroutine(ApplyStar());
                         break;
                     case PowerUpItem.PowerUpType.SpeedUp:
-                        StartCoroutine(ApplySpeedUpMultiplier());
+                        CancelCurrentPowerUp();
+                        activePowerUpCoroutine = StartCoroutine(ApplySpeedUpMultiplier());
                         break;
                     case PowerUpItem.PowerUpType.Bomb:
-                        StartCoroutine(ApplyBombInvincibility());
+                        CancelCurrentPowerUp();
+                        activePowerUpCoroutine = StartCoroutine(ApplyBombInvincibility());
                         break;
                     case PowerUpItem.PowerUpType.Shield:
+                        CancelCurrentPowerUp();
                         ApplyShield();
                         break;
                 }
@@ -156,6 +164,24 @@ public class PlayerController : MonoBehaviour
 
     // --- POWER UP EFFECTS LOGIC ---
 
+    void CancelCurrentPowerUp()
+    {
+        if (activePowerUpCoroutine != null)
+        {
+            StopCoroutine(activePowerUpCoroutine);
+            activePowerUpCoroutine = null;
+        }
+        if (starWasActive)
+        {
+            EnvironmentScroller.gameSpeed = speedBeforeStar;
+            starWasActive = false;
+        }
+        isInvulnerable = false;
+        isShieldActive = false;
+        if (scoreManager != null) scoreManager.scoreMultiplier = 1f;
+        if (hudController != null) hudController.HideHUD();
+    }
+
     void ApplyHeart()
     {
         lives = Mathf.Min(3, lives + 1);
@@ -166,39 +192,43 @@ public class PlayerController : MonoBehaviour
     IEnumerator ApplyStar()
     {
         Debug.Log("STAR POWER!");
-        if (hudController != null) hudController.DisplayTimedPowerUp("STAR", 5f); // <-- ADD THIS
-
-        float originalSpeed = EnvironmentScroller.gameSpeed; 
-        EnvironmentScroller.gameSpeed += 15f; 
-        isInvulnerable = true; 
+        if (hudController != null) hudController.DisplayTimedPowerUp("STAR", 5f);
+        speedBeforeStar = EnvironmentScroller.gameSpeed;
+        starWasActive = true;
+        EnvironmentScroller.gameSpeed += 15f;
+        isInvulnerable = true;
 
         yield return new WaitForSeconds(5f);
 
-        EnvironmentScroller.gameSpeed = originalSpeed; 
+        EnvironmentScroller.gameSpeed = speedBeforeStar;
+        starWasActive = false;
         isInvulnerable = false;
+        activePowerUpCoroutine = null;
     }
 
     IEnumerator ApplySpeedUpMultiplier()
     {
         Debug.Log("SCORE MULTIPLIER ACTIVE!");
-        if (hudController != null) hudController.DisplayTimedPowerUp("2x SCORE", 6f); // <-- ADD THIS
+        if (hudController != null) hudController.DisplayTimedPowerUp("2x SCORE", 6f);
+        if (scoreManager != null) scoreManager.scoreMultiplier = 4f;
 
-        ScoreManager scoreManager = FindAnyObjectByType<ScoreManager>();
-        if (scoreManager != null) scoreManager.scoreMultiplier = 4f; 
+        yield return new WaitForSeconds(6f);
 
-        yield return new WaitForSeconds(6f); 
-
-        if (scoreManager != null) scoreManager.scoreMultiplier = 2f; 
+        if (scoreManager != null) scoreManager.scoreMultiplier = 1f;
+        activePowerUpCoroutine = null;
     }
 
     IEnumerator ApplyBombInvincibility()
     {
         Debug.Log("BOMB! Invincibility for 3 seconds.");
-        isInvulnerable = false;
-        ClearActiveObstacles(); // Blow up everything currently visible on screen!
+        if (hudController != null) hudController.DisplayTimedPowerUp("BOMB", 3f);
+        isInvulnerable = true;
+        ClearActiveObstacles();
 
         yield return new WaitForSeconds(3f);
+
         isInvulnerable = false;
+        activePowerUpCoroutine = null;
     }
 
     void ApplyShield()
