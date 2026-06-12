@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public float roadWidthLimit = 4.5f; 
 
     [Header("Player Stats")]
-    public int lives = 4;
+    public int lives = 3;
     public float invulnerabilityDuration = 2f;
 
     [Header("Power Up Active States")]
@@ -158,7 +158,7 @@ public class PlayerController : MonoBehaviour
 
     void ApplyHeart()
     {
-        lives = Mathf.Min(4, lives + 1);
+        lives = Mathf.Min(3, lives + 1);
         UpdateHeartUI();
         Debug.Log($"+1 Life! Total lives: {lives}");
     }
