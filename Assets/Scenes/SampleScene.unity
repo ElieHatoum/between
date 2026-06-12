@@ -506,7 +506,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentScroller
   maxSpeed: 40
-  acceleration: 0.1
   tileLength: 3
   totalSegments: 11
 --- !u!4 &92001567
@@ -653,9 +652,6 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 134623618}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -392.84998, y: -119}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -392.84998, y: -119}
@@ -1342,7 +1338,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentScroller
   maxSpeed: 40
-  acceleration: 0.1
   tileLength: 3
   totalSegments: 11
 --- !u!4 &274715738
@@ -1557,7 +1552,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentScroller
   maxSpeed: 40
-  acceleration: 0.1
   tileLength: 3
   totalSegments: 11
 --- !u!4 &288146595
@@ -1975,7 +1969,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentScroller
   maxSpeed: 40
-  acceleration: 0.1
   tileLength: 3
   totalSegments: 11
 --- !u!4 &366978418
@@ -2623,7 +2616,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentScroller
   maxSpeed: 40
-  acceleration: 0.1
   tileLength: 3
   totalSegments: 11
 --- !u!4 &505266662
@@ -2992,7 +2984,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentScroller
   maxSpeed: 40
-  acceleration: 0.1
   tileLength: 3
   totalSegments: 11
 --- !u!4 &618759246
@@ -3282,9 +3273,6 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 134623618}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -173.15002, y: -119}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -173.15002, y: -119}
@@ -3620,9 +3608,6 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -283, y: -119}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -283, y: -119}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &752841555
@@ -3828,7 +3813,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentScroller
   maxSpeed: 40
-  acceleration: 0.1
   tileLength: 3
   totalSegments: 11
 --- !u!4 &841808550
@@ -4351,7 +4335,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentScroller
   maxSpeed: 40
-  acceleration: 0.1
   tileLength: 3
   totalSegments: 11
 --- !u!4 &922153108
@@ -4945,8 +4928,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5037,9 +5020,6 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 134623618}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 267, y: -132}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 267, y: -132}
@@ -5408,7 +5388,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentScroller
   maxSpeed: 40
-  acceleration: 0.1
   tileLength: 3
   totalSegments: 11
 --- !u!4 &1165225866
@@ -5799,7 +5778,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentScroller
   maxSpeed: 40
-  acceleration: 0.1
   tileLength: 3
   totalSegments: 11
 --- !u!114 &1251720677
@@ -6709,7 +6687,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentScroller
   maxSpeed: 40
-  acceleration: 0.1
   tileLength: 3
   totalSegments: 11
 --- !u!4 &1521496233
@@ -6958,7 +6935,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnvironmentScroller
   maxSpeed: 40
-  acceleration: 0.1
   tileLength: 3
   totalSegments: 11
 --- !u!4 &1586186931
@@ -8986,8 +8962,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
